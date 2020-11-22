@@ -1,0 +1,31 @@
+ALGORITHM Checkpoint Algorithm1
+VAR
+    ch: STRING :='';
+    nbr_mot : INTEGER :=0;
+    nbr_voyelle : INTEGER :=0;
+    ca : CHAR :='';
+    nbr_char : INTEGER :=0;
+
+BEGIN
+    WHILE (ca <> ".") DO
+        Read(ca);
+        ch:=ch + ca;
+        nbr_char := nbr_char +1;
+        IF (ca IN ['a','e','i','o','u','y']) THEN
+            nbr_voyelle  := nbr_voyelle +1;
+        END_IF
+
+        IF (ca=' ') THEN
+            nbr_mot := nbr_mot +1;
+        END_IF
+        
+    END_WHILE
+
+    Write("The sentence : ",ch);
+
+    Write("The length of the sentence : ",nbr_char);
+
+    Write("The number of words in the sentence : ",nbr_mot);
+
+    Write("he number of vowels in the sentence : ",nbr_voyelle);
+END
